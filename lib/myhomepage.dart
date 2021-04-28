@@ -9,6 +9,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool _likeBool = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Bonjour"),
         centerTitle: true,
-        leading: Icon(Icons.favorite),
+        leading: IconButton(
+          icon: (_likeBool) ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+          onPressed: () {
+            _likeThis();
+            print(_likeBool);
+          },
+        ),
         actions: [
           Icon(Icons.access_alarm),
           Icon(Icons.golf_course),
@@ -25,6 +32,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         elevation: 10.0,
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Accueil"),
+          BottomNavigationBarItem(icon: Icon(Icons.assessment_outlined),label: "Statistiques"),
+        ],
+      ),
     );
   }
+
+  void _likeThis(){
+    setState(() {
+      _likeBool = !_likeBool;
+    });
+
+  }
+
+
+
 }
