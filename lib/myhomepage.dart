@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,6 +15,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double largeur = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Color.fromRGBO(66, 165, 245, 1.0),
       appBar: AppBar(
@@ -43,6 +46,28 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         currentIndex: _indexSelect,
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text("Salut les RIL 19"),
+            Container(
+              color: Colors.red,
+              height: 75,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(height: 60, width: 60,color: Colors.yellow,),
+                  Container(height: 60, width: 60,color: Colors.blue,),
+                  Container(height: 60, width: 60,color: Colors.indigo,),
+                  Container(height: 60, width: 60,color: Colors.teal,),
+                ],
+              ),
+            ),
+            Container(color: Colors.yellow,height: 75,),
+          ],
+        )
+      )
     );
   }
 
