@@ -10,6 +10,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool _likeBool = false;
+  int _indexSelect = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +38,18 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(icon: Icon(Icons.home),label: "Accueil"),
           BottomNavigationBarItem(icon: Icon(Icons.assessment_outlined),label: "Statistiques"),
         ],
+        onTap: (int index){
+          _itemClique(index);
+        },
+        currentIndex: _indexSelect,
       ),
     );
+  }
+
+  void _itemClique(int index){
+    setState(() {
+      _indexSelect = index;
+    });
   }
 
   void _likeThis(){
