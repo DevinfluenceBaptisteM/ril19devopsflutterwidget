@@ -57,14 +57,35 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(height: 60, width: 60,color: Colors.yellow,),
-                  Container(height: 60, width: 60,color: Colors.blue,),
-                  Container(height: 60, width: 60,color: Colors.indigo,),
-                  Container(height: 60, width: 60,color: Colors.teal,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.yellow,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.blue,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.indigo,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.teal,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.yellow,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.blue,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.indigo,),
+                  Container(height: largeur / 9, width: largeur / 9,color: Colors.teal,),
                 ],
               ),
             ),
-            Container(color: Colors.yellow,height: 75,),
+            Container(
+              color: Colors.yellow,
+              height: 75,
+              child: Row(
+                children: [
+                  Container(width:largeur / 9, color: Colors.red,),
+                  Expanded(
+                    flex: 1,
+                    child: Container(color: Colors.blue,),
+                  ),
+                  Expanded(
+                    flex: 2,
+                      child: Container(color: Colors.indigo,),
+                  ),
+
+                ],
+              ),
+            ),
           ],
         )
       )
